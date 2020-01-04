@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Application
+spec:
+  services:
+    - name: calculator
+      ports:
+        - targetPort: 8000  # Use 8000 for RPC entries for web client
+          protocol: http
+      healthCheck:
+        path: /health
+

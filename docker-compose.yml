@@ -1,0 +1,16 @@
+version: "2.1"
+networks:
+  internal_network:
+services:
+  calculator:
+    build: ./app-calc
+    networks:
+        - internal_network
+    links:
+        - multiplier
+    ports:
+        - "8000:8000"
+  multiplier:
+    build: ./app-mul
+    networks:
+        - internal_network

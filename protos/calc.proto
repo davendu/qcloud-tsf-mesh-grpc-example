@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+//option java_multiple_files = true;
+//option java_package = "io.grpc.examples.helloworld";
+//option java_outer_classname = "HelloWorldProto";
+//option objc_class_prefix = "HLW";
+
+package calc;
+
+service Calculator {
+  // Sends a greeting
+  rpc Add (OpRequest) returns (OpReply) {}
+  rpc Mul (OpRequest) returns (OpReply) {}
+}
+
+message OpRequest {
+  int32 left  = 1;
+  int32 right = 2;
+}
+message OpReply {
+  int32 result = 1;
+}

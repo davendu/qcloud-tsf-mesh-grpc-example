@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Application
+spec:
+  services:
+    - name: multiplier
+      ports:
+        - targetPort: 9000  # Use 9000 for RPC
+          protocol: http2   # use http2 for gRPC
+
